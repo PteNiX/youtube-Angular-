@@ -1,2 +1,1 @@
-export class SearchItem {
-}
+export class SearchItem {}

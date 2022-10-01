@@ -1,2 +1,1 @@
-export class SearchResponse {
-}
+export class SearchResponse {}
