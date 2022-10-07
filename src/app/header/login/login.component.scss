@@ -1,0 +1,23 @@
+
+.login{
+    position: relative;
+    left:584px;
+    display: flex;
+    gap:8px;
+    height:80px;
+    align-items: center;
+ 
+    .login__name{
+        width: 102px;
+        height: 15px;
+        text-align: center;
+    }
+    .login__picture{
+        position: relative;
+        top:2px;
+        width: 34px;
+        height:34px;
+
+    }
+
+}

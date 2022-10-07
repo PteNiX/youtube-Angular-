@@ -1,6 +1,6 @@
 export class SearchResponse {}
 
-import { Item } from '../models/search-item.model';
+import { Item } from './search-item.model';
 
 export interface Responce {
   kind: string;
