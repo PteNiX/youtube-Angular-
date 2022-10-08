@@ -12,6 +12,7 @@ import { LoginComponent } from './header/login/login.component';
 import { SettingButtonComponent } from './header/setting-button/setting-button.component';
 import { SearchInputComponent } from './header/search/search-input/search-input.component';
 import { FormsModule } from '@angular/forms';
+import { FilterInputComponent } from './filter/filter-input/filter-input.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     SettingButtonComponent,
     SearchInputComponent,
     LoginComponent,
+    FilterInputComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

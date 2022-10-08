@@ -1,0 +1,74 @@
+.dropdown{
+    width: 1440px;
+    height: 50px;
+    background-color:#E5E5E5;
+    margin: auto;
+    
+    .dropdown-group{
+        position: relative;
+        left:-50px;
+        margin: auto;
+        display: flex;
+        width:479px;
+        height:14px;
+   
+        .dropdown-sorting{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            color: #929292;
+        }
+
+        .dropdown-date{
+            position: relative;
+            left:11px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-decoration-line: underline;
+            color: #2F80ED;
+            cursor: pointer;
+        }
+
+        .dropdown-count{
+            position: relative;
+            left:31px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-decoration-line: underline;
+            color: #2F80ED;
+            cursor: pointer;
+        }
+
+        .dropdown-by-word{
+            position: relative;
+            left:52px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-decoration-line: underline;
+            color: #2F80ED;
+            cursor: pointer;
+        }
+
+
+
+        .dropdown-input{
+            position: relative;
+            left:73px;
+            background-color:#FFFFFF;
+            border: none;
+            width: 149px;
+            color: #929292;
+        }
+    }
+}
