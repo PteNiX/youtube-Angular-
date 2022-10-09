@@ -1,16 +1,19 @@
 .dropdown{
+    display: none;
     width: 1440px;
     height: 50px;
     background-color:#E5E5E5;
     margin: auto;
-    
+       
     .dropdown-group{
+        top:35%;
         position: relative;
         left:-50px;
         margin: auto;
         display: flex;
         width:479px;
         height:14px;
+       
    
         .dropdown-sorting{
             font-family: 'Roboto';
@@ -71,4 +74,7 @@
             color: #929292;
         }
     }
+}
+.dropdown-close{
+    display: block;
 }

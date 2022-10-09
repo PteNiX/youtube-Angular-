@@ -11,4 +11,8 @@ export class SettingButtonComponent implements OnInit {
   settingPath = '../../../assets/images/search-settings.png';
 
   ngOnInit(): void {}
+
+  toggleSettings() {
+    document.querySelector('.dropdown')?.classList.toggle('dropdown-close');
+  }
 }
