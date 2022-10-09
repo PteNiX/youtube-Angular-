@@ -13,6 +13,7 @@ import { SettingButtonComponent } from './header/setting-button/setting-button.c
 import { SearchInputComponent } from './header/search/search-input/search-input.component';
 import { FormsModule } from '@angular/forms';
 import { FilterInputComponent } from './filter/filter-input/filter-input.component';
+import { CardComponent } from './header/search/search-results/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FilterInputComponent } from './filter/filter-input/filter-input.compone
     SearchInputComponent,
     LoginComponent,
     FilterInputComponent,
+    CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
