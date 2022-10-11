@@ -1,5 +1,3 @@
-export class SearchItem {}
-
 export interface Item {
   kind: string;
   etag: string;
@@ -9,14 +7,14 @@ export interface Item {
 }
 
 interface Snippet {
-  publishedAt: Date;
+  publishedAt: string;
   channelId: string;
   title: string;
   description: string;
   thumbnails: Thumbnails;
   channelTitle: string;
   tags: string[];
-  categoryId: number;
+  categoryId: string;
   liveBroadcastContent: string;
   localized: Localized;
   defaultAudioLanguage: string;
@@ -26,7 +24,7 @@ interface Thumbnails {
   default: ThumbnailsIn;
   medium: ThumbnailsIn;
   high: ThumbnailsIn;
-  standart: ThumbnailsIn;
+  standard: ThumbnailsIn;
   maxres: ThumbnailsIn;
 }
 
@@ -42,9 +40,9 @@ interface Localized {
 }
 
 interface Statistics {
-  viewCount: number;
-  likeCount: number;
-  dislikeCount: number;
-  favoriteCount: number;
-  commentCount: number;
+  viewCount: string;
+  likeCount: string;
+  dislikeCount: string;
+  favoriteCount: string;
+  commentCount: string;
 }

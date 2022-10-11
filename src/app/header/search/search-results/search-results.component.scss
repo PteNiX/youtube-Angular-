@@ -1,7 +1,25 @@
 
 .search-result {
+    display: none;
     background-color: white;
     margin: auto;
     width: 1200px;
-    height: 1100px;
+    height: 11100px;
+
+}
+
+
+app-card {
+    position: relative;
+    left:29px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:29px;
+    top:31px;
+ 
+
+}
+
+.search-result-active {
+    display: block;
 }

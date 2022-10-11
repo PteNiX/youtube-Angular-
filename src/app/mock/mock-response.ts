@@ -1,6 +1,5 @@
-import { SearchResponse } from 'src/app/header/search/models/search-response.model';
-
-export const mockResponse: SearchResponse = {
+import { Responce } from 'src/app/header/search/models/search-response.model';
+export const mockResponse: Responce = {
   kind: 'youtube#videoListResponse',
   etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4"',
   pageInfo: {
@@ -371,7 +370,6 @@ export const mockResponse: SearchResponse = {
         ],
         categoryId: '27',
         liveBroadcastContent: 'none',
-        defaultLanguage: 'ru',
         localized: {
           title: 'Что такое Angular. Обзор возможностей',
           description:
@@ -451,7 +449,6 @@ export const mockResponse: SearchResponse = {
         ],
         categoryId: '28',
         liveBroadcastContent: 'none',
-        defaultLanguage: 'en',
         localized: {
           title: 'What is Angular? (Explained for Beginners)',
           description:
@@ -522,7 +519,6 @@ export const mockResponse: SearchResponse = {
         ],
         categoryId: '27',
         liveBroadcastContent: 'none',
-        defaultLanguage: 'ru',
         localized: {
           title: 'Уроки Angular для начинающих / #1 - Введение в Angular',
           description:

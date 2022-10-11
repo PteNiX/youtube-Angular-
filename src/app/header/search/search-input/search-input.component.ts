@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent implements OnInit {
-  searchForm: any = {
+  public searchForm: any = {
     text: '',
   };
+
+  showSearch() {
+    document
+      .querySelector('.search-result')
+      ?.classList.toggle('search-result-active');
+  }
 
   constructor() {}
 

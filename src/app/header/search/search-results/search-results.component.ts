@@ -8,5 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchResultsComponent implements OnInit {
   constructor() {}
 
+  mockResponse: any;
+
   ngOnInit(): void {}
 }

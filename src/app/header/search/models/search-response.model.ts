@@ -1,5 +1,3 @@
-export class SearchResponse {}
-
 import { Item } from './search-item.model';
 
 export interface Responce {

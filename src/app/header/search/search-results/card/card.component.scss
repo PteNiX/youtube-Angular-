@@ -32,7 +32,7 @@ color: #000000;
 
         .group-view{
             display:flex;
-            width: 39px;
+            width: 41px;
             gap:3px;
                     
         }
@@ -69,6 +69,7 @@ color: #000000;
         line-height: 23px;
         text-align: right;
         color: #4F4F4F;
+        overflow: hidden;
     }
     .card-btn {
         position:relative;
