@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-search-input',
@@ -6,17 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent implements OnInit {
-  public searchForm: any = {
+  searchForm: any = {
     text: '',
   };
 
   showSearch() {
     document
       .querySelector('.search-result')
-      ?.classList.toggle('search-result-active');
+      ?.classList.add('search-result-active');
   }
 
-  constructor() {}
+  constructor(private shared: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.shared.setMessage(this.searchForm);
+  }
 }

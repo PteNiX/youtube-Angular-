@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { mockResponse } from '../../../../mock/mock-response';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-card',
@@ -7,13 +8,17 @@ import { mockResponse } from '../../../../mock/mock-response';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  constructor() {}
+  constructor(private shared: DataService) {}
 
   mock = mockResponse;
 
   cards = this.mock.items;
 
+  luck: any;
+
   ngOnInit(): void {
-    console.log(this.mock.items.length);
+    this.luck = this.shared.getMessage();
+
+    console.log(this.cards);
   }
 }

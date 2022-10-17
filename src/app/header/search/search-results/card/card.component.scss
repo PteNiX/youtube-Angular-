@@ -88,6 +88,10 @@ color: #000000;
         border-radius: 5px;
         color: #FFFFFF;
         cursor: pointer;
+
+        &:hover{
+            background-color: #5EA2FF
+        }
     }
 
     .card-bottom-panel{

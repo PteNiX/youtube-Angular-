@@ -13,6 +13,7 @@ main {
     width: 1440px;
     margin: auto;
     height: 900px;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background-color: #2F80ED;
 }

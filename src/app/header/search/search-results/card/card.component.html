@@ -1,25 +1,25 @@
-<div *ngFor="let card of cards; let i = index" class="card">
-    <img class="card-img" src='{{mock.items[i].snippet.thumbnails.medium.url}}'>
+<div *ngFor="let card of cards | searchFilter: luck.text; let i = index" class="card">
+    <img class="card-img" src='{{card.snippet.thumbnails.medium.url}}'>
     <div class="card-group">
         <div class="group-view">
             <img class=view-image src="../../../../../assets/images/view.png">
-            <div class="view-value">{{mock.items[i].statistics.viewCount}}</div>
+            <div class="view-value">{{card.statistics.viewCount}}</div>
         </div>
         <div class="group-like">
             <img class=like-image src="../../../../../assets/images/like.png">
-            <div class="like-value">{{mock.items[i].statistics.likeCount}}</div>
+            <div class="like-value">{{card.statistics.likeCount}}</div>
         </div>
         <div class="group-dislike">
             <img class=dislike-image src="../../../../../assets/images/dislike.png">
-            <div class="dislike-value">{{mock.items[i].statistics.dislikeCount}}</div>
+            <div class="dislike-value">{{card.statistics.dislikeCount}}</div>
         </div>
         <div class="group-comment">
             <img class=comment-image src="../../../../../assets/images/comment.png">
-            <div class="comment-value">{{mock.items[i].statistics.commentCount}}</div>
+            <div class="comment-value">{{card.statistics.commentCount}}</div>
         </div>
 
     </div>
-    <div class="card-title">{{mock.items[i].snippet.title}}</div>
+    <div class="card-title">{{card.snippet.title}}</div>
     <button class="card-btn">more...</button>
     <div class="card-bottom-panel"></div>
 </div>

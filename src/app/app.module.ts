@@ -14,6 +14,8 @@ import { SearchInputComponent } from './header/search/search-input/search-input.
 import { FormsModule } from '@angular/forms';
 import { FilterInputComponent } from './filter/filter-input/filter-input.component';
 import { CardComponent } from './header/search/search-results/card/card.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+import { DataService } from '../app/data.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { CardComponent } from './header/search/search-results/card/card.componen
     LoginComponent,
     FilterInputComponent,
     CardComponent,
+    SearchFilterPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
