@@ -32,27 +32,27 @@ color: #000000;
 
         .group-view{
             display:flex;
-            width: 41px;
-            gap:3px;
+            width: 45px;
+            gap:2px;
                     
         }
         
         .group-like{
             display:flex;
             width: 33px;
-            gap:3px;
+            gap:2px;
         }
 
         .group-dislike{
             display:flex;
             width: 33px;
-            gap:3px;
+            gap:2px;
         }
 
         .group-comment{
             display:flex;
             width: 33px;
-            gap:3px;
+            gap:2px;
         }
 
     }
@@ -100,9 +100,27 @@ color: #000000;
         height: 5px;
         left: 1px;
         top: 132px;
-        background: #2F80ED;
+        background-color: #2F80ED;
         border-radius: 0px 0px 5px 5px;
     }
+
+    .card-bottom-panel-yellow{
+        background-color: #F2C94C
+       }
+
+    .card-bottom-panel-red{
+        background-color: #EB5757;
+       }
+
+
+    .card-bottom-panel-green{
+        background-color: #27AE60;
+       }
+    
+     .hide-date {
+        display: none;
+     }  
+
 
 
 }

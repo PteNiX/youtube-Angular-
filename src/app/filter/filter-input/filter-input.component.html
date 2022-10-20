@@ -1,10 +1,10 @@
 <div class="dropdown">
     <div class="dropdown-group">
         <div class="dropdown-sorting">Sorting by:</div>
-        <div class="dropdown-date">date</div>
-        <div class="dropdown-count">count of views</div>
-        <div class="dropdown-by-word">by word or sentance</div>
-        <input class="dropdown-input">
+        <div class="dropdown-date" (click)="sortDatabyDate()">date</div>
+        <div class="dropdown-count" (click)="sortDatabyViews()">count of views</div>
+        <div class="dropdown-by-word" (click)="sortDatabyWord()">by word or sentance</div>
+        <input class="dropdown-input" [(ngModel)]="searchDrop.text">
     </div>
 
 </div>

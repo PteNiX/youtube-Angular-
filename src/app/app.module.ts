@@ -14,7 +14,7 @@ import { SearchInputComponent } from './header/search/search-input/search-input.
 import { FormsModule } from '@angular/forms';
 import { FilterInputComponent } from './filter/filter-input/filter-input.component';
 import { CardComponent } from './header/search/search-results/card/card.component';
-import { SearchFilterPipe } from './search-filter.pipe';
+import { SearchFilterPipe } from './pipes/search-pipe/search-filter.pipe';
 import { DataService } from '../app/data.service';
 
 @NgModule({

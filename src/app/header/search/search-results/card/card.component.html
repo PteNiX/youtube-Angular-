@@ -1,5 +1,5 @@
-<div *ngFor="let card of cards | searchFilter: luck.text; let i = index" class="card">
-    <img class="card-img" src='{{card.snippet.thumbnails.medium.url}}'>
+<div *ngFor="let card of cards | searchFilter:dropSearch.text" class="card">
+    <img class=" card-img" src='{{card.snippet.thumbnails.medium.url}}'>
     <div class="card-group">
         <div class="group-view">
             <img class=view-image src="../../../../../assets/images/view.png">
@@ -20,6 +20,8 @@
 
     </div>
     <div class="card-title">{{card.snippet.title}}</div>
-    <button class="card-btn">more...</button>
+    <button class="card-btn" (click)="changeCardsColor()">more...</button>
     <div class="card-bottom-panel"></div>
+    <div class="hide-date">{{card.snippet.publishedAt}} </div>
+    <div class="hide-block" (load)="changeCardsColor()"> </div>
 </div>
