@@ -1,4 +1,4 @@
-import { Responce } from 'src/app/header/search/models/search-response.model';
+import { Responce } from 'src/app/youtube/components/header/search/models/search-response.model';
 export const mockResponse: Responce = {
   kind: 'youtube#videoListResponse',
   etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4"',

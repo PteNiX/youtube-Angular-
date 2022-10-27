@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { mockResponse } from '../../mock/mock-response';
+import { DataService } from 'src/app/core/services/data.service';
+import { mockResponse } from '../../../youtube/mock/mock-response';
 
 @Component({
   selector: 'app-filter-input',
