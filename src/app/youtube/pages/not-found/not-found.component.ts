@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent implements OnInit {
+  enter: any = {
+    login: '',
+    password: '',
+  };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

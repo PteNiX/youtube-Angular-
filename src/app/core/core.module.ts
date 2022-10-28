@@ -11,6 +11,7 @@ import { FilterInputComponent } from './components/filter-input/filter-input.com
 import { DataService } from './services/data.service';
 import { FormsModule } from '@angular/forms';
 import { CoreRoutingModule } from './core-routing.module';
+import { LoginPageComponent } from '../auth/pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CoreRoutingModule } from './core-routing.module';
     SearchInputComponent,
     HeaderComponent,
     FilterInputComponent,
+    LoginPageComponent,
   ],
   providers: [DataService],
   imports: [CommonModule, FormsModule, CoreRoutingModule],
