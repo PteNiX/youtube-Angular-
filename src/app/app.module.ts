@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
 
 import { SearchResultsComponent } from './youtube/components/header/search/search-results/search-results.component';
-import { SearchItemComponent } from './youtube/components/header/search/search-item/search-item.component';
-import { LogoComponent } from './youtube/components/header/logo/logo.component';
-import { LoginComponent } from './youtube/components/header/login/login.component';
+
+import { LogoComponent } from './core/components/logo/logo.component';
+import { LoginComponent } from './core/components/login/login.component';
 import { SettingButtonComponent } from './core/components/setting-button/setting-button.component';
 import { SearchInputComponent } from './core/components/search/search-input/search-input.component';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +22,6 @@ import { DataService } from '../app/core/services/data.service';
     AppComponent,
     HeaderComponent,
     SearchResultsComponent,
-    SearchItemComponent,
     LogoComponent,
     SettingButtonComponent,
     SearchInputComponent,
