@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
+import { RouterModule } from '@angular/router';
 
 import { SearchResultsComponent } from './youtube/components/header/search/search-results/search-results.component';
 
@@ -16,6 +17,9 @@ import { FilterInputComponent } from './core/components/filter-input/filter-inpu
 import { CardComponent } from './youtube/components/header/search/search-results/card/card.component';
 import { SearchFilterPipe } from './youtube/pipes/search-pipe/search-filter.pipe';
 import { DataService } from '../app/core/services/data.service';
+import { CoreModule } from './core/core.module';
+
+import { NotFoundComponent } from './youtube/pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +33,16 @@ import { DataService } from '../app/core/services/data.service';
     FilterInputComponent,
     CardComponent,
     SearchFilterPipe,
+    NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    CoreModule,
+    RouterModule,
+    
+  ],
   providers: [DataService],
   bootstrap: [AppComponent],
 })
