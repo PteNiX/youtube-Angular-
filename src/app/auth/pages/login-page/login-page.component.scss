@@ -64,6 +64,7 @@ width: 304px;
 height: 37px;
 background: #E0E0E0;
 left:20px;
+border:none;
 }
 
 
@@ -82,6 +83,27 @@ left:20px;
 .label-password{
     position: relative;
     top:48px;
+}
+
+.login-button{
+    position: relative;
+    width: 124px;
+    height:30px;
+    background-color: #2F80ED;
+    border-radius: 5px;
+    top:70px;
+    left:200px;
+    border: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    justify-content: center;
 }
 
 }
