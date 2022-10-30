@@ -11,6 +11,11 @@ export class LoginPageComponent implements OnInit {
     password: '',
   };
 
+  public loginData() {
+    localStorage.setItem('login', this.enter.login);
+    localStorage.setItem('password', this.enter.password);
+  }
+
   constructor() {}
 
   ngOnInit(): void {}

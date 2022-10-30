@@ -1,6 +1,6 @@
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 import { Component, OnInit } from '@angular/core';
-import { mockResponse } from '../../../../../mock/mock-response';
+import { mockResponse } from '../../../../mock/mock-response';
 import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
