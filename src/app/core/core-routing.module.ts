@@ -14,17 +14,17 @@ const routes: Routes = [
     component: CoreComponent,
     children: [
       {
-        path: '',
+        path: 'login',
         loadChildren: () =>
           import('../auth/auth.module').then((a) => a.AuthModule),
-          outlet: 'page',
+        outlet: 'page',
       },
- /*      {
+      {
         path: '',
         loadChildren: () =>
           import('../youtube/youtube.module').then((y) => y.YoutubeModule),
         outlet: 'page',
-      }, */
+      },
     ],
   },
 ];

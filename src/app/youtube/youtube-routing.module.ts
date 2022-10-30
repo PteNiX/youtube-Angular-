@@ -7,8 +7,9 @@ import { SearchResultsComponent } from './pages/search/search-results/search-res
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'main' },
   { path: 'main', component: MainPageComponent },
-  { path: 'not', component: NotFoundComponent },
   { path: 'results', component: SearchResultsComponent },
+  { path: '**', component: NotFoundComponent },
+ 
 ];
 
 @NgModule({

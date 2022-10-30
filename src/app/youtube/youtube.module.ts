@@ -6,7 +6,6 @@ import { SearchFilterPipe } from './pipes/search-pipe/search-filter.pipe';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { YoutubeComponent } from './youtube.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { CommonModule } from '@angular/common';
     CardComponent,
     SearchFilterPipe,
     MainPageComponent,
-    YoutubeComponent,
   ],
   imports: [YoutubeRoutingModule, FormsModule, CommonModule],
 })
