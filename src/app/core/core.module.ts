@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LogoComponent } from './components/logo/logo.component';
-import { LoginComponent } from './components/login/login.component';
-import { SettingButtonComponent } from './components/setting-button/setting-button.component';
-import { SearchInputComponent } from './components/search/search-input/search-input.component';
+import { LogoComponent } from './components/header/logo/logo.component';
+import { LoginComponent } from './components/header/login/login.component';
+import { SettingButtonComponent } from './components/header/setting-button/setting-button.component';
+import { SearchInputComponent } from './components/header/search-input/search-input.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FilterInputComponent } from './components/filter-input/filter-input.component';
 
