@@ -6,7 +6,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SearchResultsComponent } from './pages/search/search-results/search-results.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'info' },
+  { path: '', pathMatch: 'full', redirectTo: 'results' },
   { path: 'main', component: MainPageComponent },
   { path: 'results', component: SearchResultsComponent },
   { path: 'info', component: DetailedPageComponent },

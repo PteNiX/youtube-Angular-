@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'youtube',
+    redirectTo: 'youtube/main',
   },
 
   {
@@ -19,15 +19,14 @@ const routes: Routes = [
         path: 'login',
         loadChildren: () =>
           import('../auth/auth.module').then((a) => a.AuthModule),
-        outlet: 'page',
-       /*  canLoad: [AuthGuard], */
       },
       {
-        path: '',
+        path: 'main',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('../youtube/youtube.module').then((y) => y.YoutubeModule),
-        outlet: 'page',
       },
+
     ],
   },
 ];

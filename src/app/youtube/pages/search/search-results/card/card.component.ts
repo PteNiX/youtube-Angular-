@@ -23,11 +23,6 @@ export class CardComponent implements OnInit {
 
   changeCardsColor() {
     document.querySelectorAll('.card').forEach((element) => {
-      /*       console.log(
-        Date.parse(this.currentDate.toString()),
-        Date.parse(element.children[5].innerHTML.slice(0, -6))
-      ); */
-
       if (
         Date.parse(this.currentDate.toString()) -
           Date.parse(element.children[5].innerHTML.slice(0, -6)) >

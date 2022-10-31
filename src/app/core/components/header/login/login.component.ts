@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   constructor() {}
 
+  loginStorage: any = 'Your Name';
+
   loginPath = '../../../assets/images/login.png';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (sessionStorage.getItem('login') && sessionStorage.getItem('password')) {
+      this.loginStorage = sessionStorage.getItem('login');
+    }
+  }
 }
