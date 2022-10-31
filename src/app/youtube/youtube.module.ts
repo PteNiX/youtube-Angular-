@@ -7,6 +7,7 @@ import { YoutubeRoutingModule } from './youtube-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CommonModule } from '@angular/common';
+import { DetailedPageComponent } from './pages/detailed-page/detailed-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
     CardComponent,
     SearchFilterPipe,
     MainPageComponent,
+    DetailedPageComponent,
   ],
   imports: [YoutubeRoutingModule, FormsModule, CommonModule],
 })

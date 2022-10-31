@@ -12,8 +12,8 @@ export class LoginPageComponent implements OnInit {
   };
 
   public loginData() {
-    localStorage.setItem('login', this.enter.login);
-    localStorage.setItem('password', this.enter.password);
+    sessionStorage.setItem('login', this.enter.login);
+    sessionStorage.setItem('password', this.enter.password);
   }
 
   constructor() {}

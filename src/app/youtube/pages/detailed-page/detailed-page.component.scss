@@ -1,0 +1,144 @@
+.detailed-page {
+    background-color: white;
+    margin: auto;
+    width: 1200px;
+    height: 820px;
+
+    .back-btn{
+        position: relative;
+        width: 32px;
+        height: 32px;
+        top:35px;
+        left:4px;
+        cursor: pointer;
+
+    }
+        
+    .detailed-window {
+        position: relative;
+        width: 1165px;
+        height: 461px;
+        left: 35px;
+        top: 0px;
+       
+        display: flex;
+
+        .big-card {
+          
+            width: 729px;
+            height: 461px;
+            border-radius: 0px 0px 0px 5px;
+        }
+
+        .big-card-info{
+            background-color: #E5E5E5;
+            width: 436px;
+            height: 461px;
+            border-radius: 0px 5px 5px 0px;
+
+            .card-title{
+                position: relative;
+                top:35px;
+                left:34px;
+                width: 248px;
+                height: 66px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 28px;
+                color: #000000;
+            }
+
+
+            .card-date{
+                position: relative;
+                width: 137px;
+                height: 12px;
+                left: 258px;
+                top: -20px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                text-align: right;
+                color: #828282;
+            }
+
+            .card-subtitle{
+                position: relative;
+                width: 76px;
+                height: 16px;
+                left: 34px;
+                top: 10px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                display: flex;
+                align-items: center;
+                color: #000000;
+
+            }
+
+            .card-description{
+                position: relative;
+                width: 365px;
+                height: 280px;
+                left: 34px;
+                top: 14px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+                color: #828282;
+            }
+
+            .card-group{
+                position: relative;
+                width: 202px;
+                height: 13px;
+                left: 140px;
+                top: 40px;
+                display: flex;
+                gap:17px;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                color: #000000;
+        
+                .group-view{
+                    display:flex;
+                    width: 45px;
+                    gap:2px;
+                            
+                }
+                
+                .group-like{
+                    display:flex;
+                    width: 33px;
+                    gap:2px;
+                }
+        
+                .group-dislike{
+                    display:flex;
+                    width: 33px;
+                    gap:2px;
+                }
+        
+                .group-comment{
+                    display:flex;
+                    width: 33px;
+                    gap:2px;
+                }
+        
+            }
+        }
+
+    }
+}

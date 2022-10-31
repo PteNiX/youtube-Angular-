@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreComponent } from './core.component';
+import { AuthGuard } from '../auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,12 +13,14 @@ const routes: Routes = [
   {
     path: 'youtube',
     component: CoreComponent,
+
     children: [
       {
         path: 'login',
         loadChildren: () =>
           import('../auth/auth.module').then((a) => a.AuthModule),
         outlet: 'page',
+       /*  canLoad: [AuthGuard], */
       },
       {
         path: '',
