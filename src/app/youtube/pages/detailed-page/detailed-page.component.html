@@ -2,30 +2,28 @@
     <img class="back-btn" src="../../../../assets/images/back_button.png" routerLink="/youtube/main/results"
         routerLinkActive="active">
     <div class="detailed-window">
-        <img class="big-card" src="">
+        <img class="big-card" src="{{arrayForOneCard[0].snippet.thumbnails.high.url}}">
         <div class="big-card-info">
-            <div class="card-title">Kuji Podcast #20</div>
-            <div class="card-date">Thursday, December 20, 2019</div>
+            <div class="card-title">{{arrayForOneCard[0].snippet.title}}</div>
+            <div class="card-date">{{FinalDate}}</div>
             <div class="card-subtitle">Description:</div>
-            <div class="card-description">This Is KuJi Podcast. In this issue, Timur karginov, Andrey Konyaev and Nurlan
-                Saburov discuss the end of 2018: Khabib's fight with McGregor, Kokorin and Mamayev, Urgant's show on
-                channel One, the economic crisis and gifts for loved ones.</div>
+            <div class="card-description">{{arrayForOneCard[0].snippet.description}}</div>
             <div class="card-group">
                 <div class="group-view">
                     <img class=view-image src="../../../../../assets/images/view.png">
-                    <div class="view-value">1000</div>
+                    <div class="view-value">{{arrayForOneCard[0].statistics.viewCount}}</div>
                 </div>
                 <div class="group-like">
                     <img class=like-image src="../../../../../assets/images/like.png">
-                    <div class="like-value">300</div>
+                    <div class="like-value">{{arrayForOneCard[0].statistics.likeCount}}</div>
                 </div>
                 <div class="group-dislike">
                     <img class=dislike-image src="../../../../../assets/images/dislike.png">
-                    <div class="dislike-value">200</div>
+                    <div class="dislike-value">{{arrayForOneCard[0].statistics.dislikeCount}}</div>
                 </div>
                 <div class="group-comment">
                     <img class=comment-image src="../../../../../assets/images/comment.png">
-                    <div class="comment-value">500</div>
+                    <div class="comment-value">{{arrayForOneCard[0].statistics.commentCount}}</div>
                 </div>
             </div>
         </div>

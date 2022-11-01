@@ -10,15 +10,11 @@ export class AuthGuard implements CanActivate {
     
  
     if (sessionStorage.getItem('login') &&  sessionStorage.getItem('password')) {
-      console.log ('notok');
-      console.log(sessionStorage.getItem('login'));
-
          return true;
     }
 
     else {
       this.router.navigate(['/youtube/login']);
-    console.log ('ok');
        return true;
     }
   }

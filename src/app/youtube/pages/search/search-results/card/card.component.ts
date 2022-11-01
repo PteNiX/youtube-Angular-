@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { mockResponse } from '../../../../mock/mock-response';
 import { DataService } from 'src/app/core/services/data.service';
+import { DetailedService } from 'src/app/youtube/services/detailed.service';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +10,10 @@ import { DataService } from 'src/app/core/services/data.service';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  constructor(private shared: DataService) {}
+  constructor(
+    private shared: DataService,
+    private sharedDetailed: DetailedService
+  ) {}
 
   mock = mockResponse;
 
@@ -20,6 +24,8 @@ export class CardComponent implements OnInit {
   mainSearch: any;
 
   currentDate = new Date();
+
+  dataForDetailedPage: any;
 
   changeCardsColor() {
     document.querySelectorAll('.card').forEach((element) => {
@@ -81,9 +87,15 @@ export class CardComponent implements OnInit {
     });
   }
 
+  showContacts(event: any): void {
+    this.dataForDetailedPage = event.target.id;
+    this.sharedDetailed.setDetail(this.dataForDetailedPage);
+  }
+
   ngOnInit(): void {
     this.dropSearch = this.shared.getMessageDrop();
     this.mainSearch = this.shared.getMessage();
+    /* this.sharedDetailed.setDetail(this.dataForDetailedPage); */
     this.changeCardsColor();
   }
 
@@ -96,4 +108,6 @@ export class CardComponent implements OnInit {
       );
     }
   }
+
+
 }
