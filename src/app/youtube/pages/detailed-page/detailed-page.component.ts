@@ -72,6 +72,10 @@ export class DetailedPageComponent implements OnInit {
       (e) => e.id == this.dataForDetailedPage
     );
 
+    if (this.dataForDetailedPage == undefined) {
+      this.router.navigate(['./youtube/main/main']);
+    }
+
     this.date = new Date(this.arrayForOneCard[0].snippet.publishedAt);
 
     this.year = this.date.getFullYear();
@@ -97,5 +101,4 @@ export class DetailedPageComponent implements OnInit {
     this.FinalDate =
       this.dayweek + ',' + this.month + ' ' + this.day + ',' + this.year;
   }
-
 }

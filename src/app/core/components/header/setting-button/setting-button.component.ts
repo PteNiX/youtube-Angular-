@@ -13,6 +13,8 @@ export class SettingButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   toggleSettings() {
-    document.querySelector('.dropdown')?.classList.toggle('dropdown-close');
+    if (sessionStorage.getItem('login') && sessionStorage.getItem('password')) {
+      document.querySelector('.dropdown')?.classList.toggle('dropdown-close');
+    }
   }
 }

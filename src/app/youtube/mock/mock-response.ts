@@ -469,7 +469,7 @@ export const mockResponse: Responce = {
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/u2qq5ltpXouoIrpkJgGLu8YOIeg"',
       id: 'u1VCxpvDgsk',
       snippet: {
-        publishedAt: '2022-10-19T15:00:05.000Z',
+        publishedAt: '2022-11-02T15:00:05.000Z',
         channelId: 'UCvuY904el7JvBlPbdqbfguw',
         title: 'Уроки Angular для начинающих / #1 - Введение в Angular',
         description:
