@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-results.component.scss'],
 })
 export class SearchResultsComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   mockResponse: any;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (
+      !sessionStorage.getItem('login') &&
+      !sessionStorage.getItem('password')
+    ) {
+      this.router.navigate(['./youtube/login']);
+    }
+  }
 }

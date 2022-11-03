@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { mockResponse } from '../../mock/mock-response';
 import { DetailedService } from '../../services/detailed.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detailed-page',
@@ -8,7 +9,10 @@ import { DetailedService } from '../../services/detailed.service';
   styleUrls: ['./detailed-page.component.scss'],
 })
 export class DetailedPageComponent implements OnInit {
-  constructor(private sharedDetailed: DetailedService) {}
+  constructor(
+    private sharedDetailed: DetailedService,
+    private router: Router
+  ) {}
 
   mock = mockResponse;
 
@@ -56,6 +60,13 @@ export class DetailedPageComponent implements OnInit {
 ];
 
   ngOnInit(): void {
+    if (
+      !sessionStorage.getItem('login') &&
+      !sessionStorage.getItem('password')
+    ) {
+      this.router.navigate(['./youtube/login']);
+    }
+
     this.dataForDetailedPage = this.sharedDetailed.getDetail();
     this.arrayForOneCard = this.cards.filter(
       (e) => e.id == this.dataForDetailedPage
@@ -84,6 +95,7 @@ export class DetailedPageComponent implements OnInit {
     });
 
     this.FinalDate =
-      this.dayweek + ',' + this.month + '' + this.day + ',' + this.year;
+      this.dayweek + ',' + this.month + ' ' + this.day + ',' + this.year;
   }
+
 }

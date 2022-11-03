@@ -12,17 +12,17 @@ export class LoginPageComponent implements OnInit {
     password: '',
   };
 
-
   public loginData() {
     sessionStorage.setItem('login', this.enter.login);
     sessionStorage.setItem('password', this.enter.password);
+    window.location.reload();
   }
 
   constructor(private router: Router) {}
 
-  redirect() {
-    this.router.navigate(['./youtube/main']);
+  ngOnInit(): void {
+    if (sessionStorage.getItem('login') && sessionStorage.getItem('password')) {
+      this.router.navigate(['./youtube/main']);
+    }
   }
-
-  ngOnInit(): void {}
 }
