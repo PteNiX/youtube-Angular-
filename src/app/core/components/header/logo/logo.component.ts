@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LogoComponent implements OnInit {
   constructor() {}
 
-  imagePath = '../../../assets/images/logo.png';
+  imagePath = './assets/images/logo.png';
 
   ngOnInit(): void {}
 }

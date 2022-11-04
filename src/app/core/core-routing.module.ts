@@ -26,7 +26,6 @@ const routes: Routes = [
         loadChildren: () =>
           import('../youtube/youtube.module').then((y) => y.YoutubeModule),
       },
-
     ],
   },
 ];

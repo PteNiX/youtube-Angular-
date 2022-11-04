@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SettingButtonComponent implements OnInit {
   constructor() {}
 
-  settingPath = '../../../assets/images/search-settings.png';
+  settingPath = './assets/images/search-settings.png';
 
   ngOnInit(): void {}
 

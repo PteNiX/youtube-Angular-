@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   loginStorage: any = 'Your Name';
 
-  loginPath = '../../../assets/images/login.png';
+  loginPath = './assets/images/login.png';
 
   ngOnInit(): void {
     if (sessionStorage.getItem('login') && sessionStorage.getItem('password')) {

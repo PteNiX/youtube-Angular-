@@ -22,7 +22,7 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     if (sessionStorage.getItem('login') && sessionStorage.getItem('password')) {
-      this.router.navigate(['./youtube/main']);
+      this.router.navigate(['../../youtube/main']);
     }
   }
 }
