@@ -5,15 +5,15 @@ const routes: Routes = [
 
 /*   {
     path: '',
+    redirectTo: 'youtube/main',
     pathMatch: 'full',
-    redirectTo: 'core',
-  },
+  }, */
 
-  {
+ /*  {
     path: 'core',
     loadChildren: () =>
       import('./core/core.component').then((y) => y.CoreComponent),
-  }, */
+  },  */
 ];
 
 @NgModule({

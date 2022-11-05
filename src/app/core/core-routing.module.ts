@@ -4,10 +4,11 @@ import { CoreComponent } from './core.component';
 import { AuthGuard } from '../auth/guards/auth.guard';
 
 const routes: Routes = [
-  {
+    {
     path: '',
+    redirectTo: 'youtube',
     pathMatch: 'full',
-    redirectTo: 'youtube/main',
+
   },
 
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     component: CoreComponent,
 
     children: [
+      {
+        path: '',
+        redirectTo: 'main',
+        pathMatch: 'full',
+      },
       {
         path: 'login',
         loadChildren: () =>
