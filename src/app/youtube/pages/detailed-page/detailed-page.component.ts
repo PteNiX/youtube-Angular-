@@ -64,7 +64,7 @@ export class DetailedPageComponent implements OnInit {
       !sessionStorage.getItem('login') &&
       !sessionStorage.getItem('password')
     ) {
-      this.router.navigate(['./youtube/login']);
+      this.router.navigate(['./login']);
     }
 
     this.dataForDetailedPage = this.sharedDetailed.getDetail();
@@ -73,7 +73,7 @@ export class DetailedPageComponent implements OnInit {
     );
 
     if (this.dataForDetailedPage == undefined) {
-      this.router.navigate(['./youtube/main/main']);
+      this.router.navigate(['./main/main']);
     }
 
     this.date = new Date(this.arrayForOneCard[0].snippet.publishedAt);

@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'results', component: SearchResultsComponent },
   { path: 'info', component: DetailedPageComponent },
   { path: '**', component: NotFoundComponent },
+  
 ];
 
 @NgModule({

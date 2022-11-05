@@ -4,15 +4,15 @@ import { CoreComponent } from './core.component';
 import { AuthGuard } from '../auth/guards/auth.guard';
 
 const routes: Routes = [
-    {
-    path: '',
+/*     {
+    path: 'youtube',
     redirectTo: 'youtube',
     pathMatch: 'full',
 
-  },
+  }, */
 
   {
-    path: 'youtube',
+    path: '',
     component: CoreComponent,
 
     children: [
@@ -21,14 +21,20 @@ const routes: Routes = [
         redirectTo: 'main',
         pathMatch: 'full',
       },
+
+      {
+        path: 'main',
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('../youtube/youtube.module').then((y) => y.YoutubeModule),
+      },
       {
         path: 'login',
         loadChildren: () =>
           import('../auth/auth.module').then((a) => a.AuthModule),
       },
       {
-        path: 'main',
-        canActivate: [AuthGuard],
+        path: '**',
         loadChildren: () =>
           import('../youtube/youtube.module').then((y) => y.YoutubeModule),
       },

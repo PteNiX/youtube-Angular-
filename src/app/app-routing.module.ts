@@ -3,17 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-/*   {
-    path: '',
-    redirectTo: 'youtube/main',
-    pathMatch: 'full',
-  }, */
-
- /*  {
-    path: 'core',
-    loadChildren: () =>
-      import('./core/core.component').then((y) => y.CoreComponent),
-  },  */
+//see core module
 ];
 
 @NgModule({

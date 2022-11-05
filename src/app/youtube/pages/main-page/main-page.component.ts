@@ -14,7 +14,7 @@ export class MainPageComponent implements OnInit {
       !sessionStorage.getItem('login') &&
       !sessionStorage.getItem('password')
     ) {
-      this.router.navigate(['./youtube/login']);
+      this.router.navigate(['./login']);
     }
   }
 }

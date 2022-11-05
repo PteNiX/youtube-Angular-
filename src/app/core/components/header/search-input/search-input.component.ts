@@ -23,7 +23,7 @@ export class SearchInputComponent implements OnInit {
   constructor(private shared: DataService, private router: Router) {}
 
   redirectToResults() {
-    this.router.navigate(['./youtube/main/results']);
+    this.router.navigate(['./main/results']);
   }
 
   ngOnInit(): void {
