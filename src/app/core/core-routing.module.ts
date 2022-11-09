@@ -4,7 +4,7 @@ import { CoreComponent } from './core.component';
 import { AuthGuard } from '../auth/guards/auth.guard';
 
 const routes: Routes = [
-/*     {
+  /*     {
     path: 'youtube',
     redirectTo: 'youtube',
     pathMatch: 'full',

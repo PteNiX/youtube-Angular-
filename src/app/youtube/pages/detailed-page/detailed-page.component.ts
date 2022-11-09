@@ -57,7 +57,7 @@ export class DetailedPageComponent implements OnInit {
     'October',
     'November',
     'December',
-];
+  ];
 
   ngOnInit(): void {
     if (
