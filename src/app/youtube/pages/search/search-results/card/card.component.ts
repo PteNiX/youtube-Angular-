@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { mockResponse } from '../../../../mock/mock-response';
 import { DataService } from 'src/app/core/services/data.service';
 import { DetailedService } from 'src/app/youtube/services/detailed.service';
+import { YoutubeService } from 'src/app/youtube/services/youtube.service';
+import { debounceTime, distinctUntilChanged, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +14,8 @@ import { DetailedService } from 'src/app/youtube/services/detailed.service';
 export class CardComponent implements OnInit {
   constructor(
     private shared: DataService,
-    private sharedDetailed: DetailedService
+    private sharedDetailed: DetailedService,
+    private shared1: YoutubeService
   ) {}
 
   mock = mockResponse;
@@ -26,6 +29,27 @@ export class CardComponent implements OnInit {
   currentDate = new Date();
 
   dataForDetailedPage: any;
+
+  responce: any;
+
+  responce2: any;
+
+  cardsYoutube: any;
+
+  results: any;
+
+  url: any;
+
+  test() {
+    console.log(this.responce);
+    console.log(this.cardsYoutube);
+  }
+
+  search() {
+    this.shared1.getVideos(this.mainSearch.text).subscribe({
+      next: (data: any) => (this.cardsYoutube = data.items),
+    });
+  }
 
   changeCardsColor() {
     document.querySelectorAll('.card').forEach((element) => {
@@ -58,33 +82,7 @@ export class CardComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    document.querySelectorAll('.card').forEach((element) => {
-      if (
-        Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) >
-          604800000 &&
-        Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) <
-          2592000000
-      ) {
-        element.children[4].classList.add('card-bottom-panel-green');
-      } else if (
-        Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) >
-          2592000000 &&
-        Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) <
-          12960000000
-      ) {
-        element.children[4].classList.add('card-bottom-panel-yellow');
-      } else if (
-        Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) >
-        12960000000
-      ) {
-        element.children[4].classList.add('card-bottom-panel-red');
-      }
-    });
+    this.changeCardsColor();
   }
 
   showContacts(event: any): void {
@@ -95,7 +93,24 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.dropSearch = this.shared.getMessageDrop();
     this.mainSearch = this.shared.getMessage();
-    /* this.sharedDetailed.setDetail(this.dataForDetailedPage); */
+    this.responce = this.shared.getMessageResponce();
+
+    this.search();
+
+    const obsUsingConstructor = new Observable((observer) => {
+      observer.next();
+
+      const search2 = document.querySelector('.search-input');
+
+      search2?.addEventListener('input', (event) => {
+        if (this.mainSearch.text.length > 2) {
+          observer.next(event);
+        }
+      });
+    }).pipe(debounceTime(700), distinctUntilChanged());
+
+    obsUsingConstructor.subscribe(() => this.search());
+
     this.changeCardsColor();
   }
 

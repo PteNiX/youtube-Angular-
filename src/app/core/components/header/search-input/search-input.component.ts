@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/core/services/data.service';
-import { Router } from '@angular/router';
+import { YoutubeService } from 'src/app/youtube/services/youtube.service';
 
 @Component({
   selector: 'app-search-input',
@@ -12,22 +12,44 @@ export class SearchInputComponent implements OnInit {
     text: '',
   };
 
+  responce: any;
+
+  /*   @ViewChild('input')
+  inputElement!: ElementRef;
+
+  @Output() search1: EventEmitter<string> = new EventEmitter<string>(); */
+
+  /*   getSearchValue(searchValue: string): void {  
+    console.log(searchValue);
+  } */
+
+  /*   public searchValue = new Subject<string>(); */
+
   button: any;
 
-  showSearch() {
-    document
-      .querySelector('.search-result')
-      ?.classList.add('search-result-active');
+  public getSearchValue(word: string) {
+    /*   this.searchValue$$.next(word); */
+
+    this.shared.setMessage(this.searchForm);
+    /*   console.log(this.searchForm); */
+    console.log(word);
   }
 
-  constructor(private shared: DataService, private router: Router) {}
+  constructor(private shared: DataService, private shared1: YoutubeService) {}
 
-  redirectToResults() {
-    this.router.navigate(['./main/results']);
+  public search() {
+    this.shared1.getVideos(this.searchForm.text).subscribe((responce) => {
+      this.responce = responce;
+      console.log(this.searchForm);
+      console.log(this.responce);
+      this.shared.setMessageResponce(this.responce);
+    });
   }
 
   ngOnInit(): void {
     this.shared.setMessage(this.searchForm);
+    this.shared.setMessageResponce(this.responce);
+
     this.button = document.querySelector('.search-button');
 
     if (
@@ -39,4 +61,16 @@ export class SearchInputComponent implements OnInit {
       this.button.removeAttribute('disabled');
     }
   }
+  /*   ngAfterViewInit() {
+    fromEvent(this.inputElement.nativeElement, 'keyup')
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        filter((value: any) => value.length > 3),
+        map((value) => value)
+      )
+      .subscribe((value) => {
+        this.search1.emit(value);
+      });
+  } */
 }

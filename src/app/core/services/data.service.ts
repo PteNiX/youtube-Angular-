@@ -8,12 +8,22 @@ export class DataService {
 
   searchDrop: any;
 
+  responce: any;
+
   setMessage(data: any) {
     this.searchForm = data;
   }
 
   getMessage() {
     return this.searchForm;
+  }
+
+  setMessageResponce(data: any) {
+    this.responce = data;
+  }
+
+  getMessageResponce() {
+    return this.responce;
   }
 
   setMessageDrop(dataDrop: any) {

@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CommonModule } from '@angular/common';
 import { DetailedPageComponent } from './pages/detailed-page/detailed-page.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { YoutubeInterceptor } from './interceptors/youtube.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,5 +21,8 @@ import { DetailedPageComponent } from './pages/detailed-page/detailed-page.compo
     DetailedPageComponent,
   ],
   imports: [YoutubeRoutingModule, FormsModule, CommonModule],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: YoutubeInterceptor, multi: true },
+  ],
 })
 export class YoutubeModule {}
