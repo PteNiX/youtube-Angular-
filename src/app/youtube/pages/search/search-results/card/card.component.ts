@@ -4,7 +4,13 @@ import { mockResponse } from '../../../../mock/mock-response';
 import { DataService } from 'src/app/core/services/data.service';
 import { DetailedService } from 'src/app/youtube/services/detailed.service';
 import { YoutubeService } from 'src/app/youtube/services/youtube.service';
-import { debounceTime, distinctUntilChanged, Observable } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  map,
+  Observable,
+  switchMap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -19,8 +25,6 @@ export class CardComponent implements OnInit {
   ) {}
 
   mock = mockResponse;
-
-  cards = this.mock.items;
 
   dropSearch: any;
 
@@ -40,14 +44,26 @@ export class CardComponent implements OnInit {
 
   url: any;
 
+  cards: any;
+
+  math = Math;
+
   test() {
-    console.log(this.responce);
-    console.log(this.cardsYoutube);
+    this.changeCardsColor();
   }
 
   search() {
     this.shared1.getVideos(this.mainSearch.text).subscribe({
-      next: (data: any) => (this.cardsYoutube = data.items),
+      next: (data: any) => (
+        (this.cardsYoutube = data),
+        (this.cards = this.cardsYoutube[0].map((item: any, index: any) => ({
+          ...item,
+          ...this.cardsYoutube[1][index],
+        }))),
+        console.log(this.cards),
+        this.changeCardsColor(),
+        this.shared.setCards(this.cards)
+      ),
     });
   }
 
@@ -55,25 +71,25 @@ export class CardComponent implements OnInit {
     document.querySelectorAll('.card').forEach((element) => {
       if (
         Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) >
+          Date.parse(element.children[5].innerHTML.slice(0, -1)) >
           604800000 &&
         Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) <
+          Date.parse(element.children[5].innerHTML.slice(0, -1)) <
           2592000000
       ) {
         element.children[4].classList.add('card-bottom-panel-green');
       } else if (
         Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) >
+          Date.parse(element.children[5].innerHTML.slice(0, -1)) >
           2592000000 &&
         Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) <
+          Date.parse(element.children[5].innerHTML.slice(0, -1)) <
           12960000000
       ) {
         element.children[4].classList.add('card-bottom-panel-yellow');
       } else if (
         Date.parse(this.currentDate.toString()) -
-          Date.parse(element.children[5].innerHTML.slice(0, -6)) >
+          Date.parse(element.children[5].innerHTML.slice(0, -1)) >
         12960000000
       ) {
         element.children[4].classList.add('card-bottom-panel-red');
@@ -95,10 +111,8 @@ export class CardComponent implements OnInit {
     this.mainSearch = this.shared.getMessage();
     this.responce = this.shared.getMessageResponce();
 
-    this.search();
-
     const obsUsingConstructor = new Observable((observer) => {
-      observer.next();
+      /* observer.next(); */
 
       const search2 = document.querySelector('.search-input');
 
@@ -106,14 +120,18 @@ export class CardComponent implements OnInit {
         if (this.mainSearch.text.length > 2) {
           observer.next(event);
         }
+        sessionStorage.setItem('mainInput', this.mainSearch.text);
       });
-    }).pipe(debounceTime(700), distinctUntilChanged());
+    }).pipe(debounceTime(800), distinctUntilChanged());
 
     obsUsingConstructor.subscribe(() => this.search());
+    obsUsingConstructor.subscribe(() =>
+      setTimeout(() => {
+        this.changeCardsColor();
+      }, 1 * 1000)
+    );
 
-    this.changeCardsColor();
-  }
-
+    /* 
   searchByClick(cart: any, search: string) {
     search = search.toLowerCase();
 
@@ -122,5 +140,6 @@ export class CardComponent implements OnInit {
         (d: any) => d.snippet.title.toLowerCase().indexOf(search) > -1
       );
     }
+  } */
   }
 }

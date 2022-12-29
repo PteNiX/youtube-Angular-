@@ -16,34 +16,62 @@ export class FilterInputComponent implements OnInit {
 
   mock = mockResponse;
 
-  cards = this.mock.items;
+  cards: any;
+
+  sortByDate = false;
+
+  sortByView = false;
 
   constructor(private shared: DataService) {}
 
   ngOnInit(): void {
     this.shared.setMessageDrop(this.searchDrop);
+    this.cards = this.shared.getCards();
   }
 
   sortDatabyDate() {
-    return this.cards.sort((a, b) => {
-      return (
-        <any>new Date(b.snippet.publishedAt) -
-        <any>new Date(a.snippet.publishedAt)
-      );
-    });
+    this.cards = this.shared.getCards();
+    if (this.sortByDate == false) {
+      this.sortByDate = true;
+      return this.cards.sort((a: any, b: any) => {
+        return (
+          <any>new Date(b.snippet.publishedAt) -
+          <any>new Date(a.snippet.publishedAt)
+        );
+      });
+    } else {
+      this.sortByDate = false;
+      return this.cards.sort((a: any, b: any) => {
+        return (
+          <any>new Date(a.snippet.publishedAt) -
+          <any>new Date(b.snippet.publishedAt)
+        );
+      });
+    }
   }
 
   sortDatabyViews() {
-    return this.cards.sort((a, b) => {
-      return (
-        <any>new String(b.statistics.viewCount) -
-        <any>new String(a.statistics.viewCount)
-      );
-    });
+    if (this.sortByView == false) {
+      this.sortByView = true;
+      return this.cards.sort((a: any, b: any) => {
+        return (
+          <any>new String(b.statistics.viewCount) -
+          <any>new String(a.statistics.viewCount)
+        );
+      });
+    } else {
+      this.sortByView = false;
+      return this.cards.sort((a: any, b: any) => {
+        return (
+          <any>new String(a.statistics.viewCount) -
+          <any>new String(b.statistics.viewCount)
+        );
+      });
+    }
   }
 
   sortDatabyWord() {
-    return this.cards.sort((a, b) => {
+    return this.cards.sort((a: any, b: any) => {
       return a > b ? 1 : -1;
     });
   }

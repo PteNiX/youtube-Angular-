@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { mockResponse } from '../../mock/mock-response';
 import { DetailedService } from '../../services/detailed.service';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
   selector: 'app-detailed-page',
@@ -11,12 +11,11 @@ import { Router } from '@angular/router';
 export class DetailedPageComponent implements OnInit {
   constructor(
     private sharedDetailed: DetailedService,
-    private router: Router
+    private router: Router,
+    private shared: DataService
   ) {}
 
-  mock = mockResponse;
-
-  cards = this.mock.items;
+  cards: any;
 
   dataForDetailedPage: any;
 
@@ -33,6 +32,8 @@ export class DetailedPageComponent implements OnInit {
   dayweek: any;
 
   FinalDate: any;
+
+  math = Math;
 
   days = [
     'Sunday',
@@ -60,6 +61,7 @@ export class DetailedPageComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.cards = this.shared.getCards();
     if (
       !sessionStorage.getItem('login') &&
       !sessionStorage.getItem('password')
@@ -69,7 +71,7 @@ export class DetailedPageComponent implements OnInit {
 
     this.dataForDetailedPage = this.sharedDetailed.getDetail();
     this.arrayForOneCard = this.cards.filter(
-      (e) => e.id == this.dataForDetailedPage
+      (e: any) => e.id == this.dataForDetailedPage
     );
 
     if (this.dataForDetailedPage == undefined) {

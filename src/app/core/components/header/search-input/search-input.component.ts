@@ -28,11 +28,9 @@ export class SearchInputComponent implements OnInit {
   button: any;
 
   public getSearchValue(word: string) {
-    /*   this.searchValue$$.next(word); */
-
+    word;
     this.shared.setMessage(this.searchForm);
-    /*   console.log(this.searchForm); */
-    console.log(word);
+    /* console.log(word); */
   }
 
   constructor(private shared: DataService, private shared1: YoutubeService) {}
@@ -40,8 +38,6 @@ export class SearchInputComponent implements OnInit {
   public search() {
     this.shared1.getVideos(this.searchForm.text).subscribe((responce) => {
       this.responce = responce;
-      console.log(this.searchForm);
-      console.log(this.responce);
       this.shared.setMessageResponce(this.responce);
     });
   }
@@ -52,14 +48,14 @@ export class SearchInputComponent implements OnInit {
 
     this.button = document.querySelector('.search-button');
 
-    if (
+/*     if (
       !sessionStorage.getItem('login') &&
       !sessionStorage.getItem('password')
     ) {
       this.button.setAttribute('disabled', true);
     } else {
       this.button.removeAttribute('disabled');
-    }
+    } */
   }
   /*   ngAfterViewInit() {
     fromEvent(this.inputElement.nativeElement, 'keyup')

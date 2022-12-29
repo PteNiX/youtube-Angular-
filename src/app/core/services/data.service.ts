@@ -10,6 +10,17 @@ export class DataService {
 
   responce: any;
 
+  cards: any;
+
+  setCards(data: any) {
+    this.cards = data;
+  }
+
+  getCards() {
+    return this.cards;
+  }
+ 
+
   setMessage(data: any) {
     this.searchForm = data;
   }

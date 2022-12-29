@@ -19,7 +19,7 @@
                 </div>
                 <div class="group-dislike">
                     <img class=dislike-image src="./assets/images/dislike.png">
-                    <div class="dislike-value">{{arrayForOneCard[0].statistics.dislikeCount}}</div>
+                    <div class="dislike-value">{{math.round(arrayForOneCard[0].statistics.likeCount/10)}}</div>
                 </div>
                 <div class="group-comment">
                     <img class=comment-image src="./assets/images/comment.png">
