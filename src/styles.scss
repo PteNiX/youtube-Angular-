@@ -4,10 +4,15 @@
  
   }
 
+
+
+@media (min-width: 1470px) {
+
   app-root {
     width: 1440px;
     margin: auto;
     height: 900px;
     overflow: hidden;
     background-color: blue;
+}
 }

@@ -3,7 +3,7 @@
     background-color: white;
     margin: auto;
     width: 1200px;
-    height: 11100px;
+    height: 800px;
 
     .main-title{
         position: relative;
@@ -11,7 +11,6 @@
       
         color:#2F80ED;
         
-    
         background-color: white;
         margin: auto;
         width: 1200px;
@@ -55,4 +54,44 @@ app-card {
 
 .search-result-active {
     display: block;
+}
+
+
+@media (max-width: 1469px) {
+    .search-result {
+        background-color: white;
+        margin: auto;
+        width: 900px;
+        height: 700px;
+        
+        .main-title{
+            position: relative;
+            height: 820px;
+          
+            color:#2F80ED;
+            
+        
+            background-color: white;
+            margin: auto;
+            width: 900px;
+            
+        
+            .main-navigation{
+                position: relative;
+                width: 300px;
+                height: 200px;
+                font-size: 40px;
+                margin: auto;
+                top:4rem;
+            }
+        
+            .main-loupe{
+                position: relative;
+                top:-13rem;
+                left:40rem; 
+                height:200px;
+            }
+    
+        }
+    }    
 }

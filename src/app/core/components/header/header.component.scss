@@ -1,4 +1,4 @@
-.header{
+.header-con{
     width: 1440px;
     height:80px;
     display: flex;
@@ -13,8 +13,36 @@
     
         width: 1440px;
         margin: auto;
-        height: 900px;
-        overflow-y: scroll;
+       
+       
         overflow-x: hidden;
         background-color: #2F80ED;
+    }
+
+
+    @media (max-width: 1469px) {
+        .header{
+            width: 100%;
+            background-color: #E5E5E5 ;
+        .header-con{
+            width:900px;
+            height:80px;
+            display: flex;
+                       gap:14px;
+            align-items: center;
+            margin: auto;
+                
+        }
+    }
+        
+        .container {
+            
+                width: 100%;
+                margin: auto;
+             
+               
+                overflow-x: hidden;
+                background-color: #2F80ED;
+            }
+         
     }

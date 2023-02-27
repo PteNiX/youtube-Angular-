@@ -41,3 +41,27 @@
         }
     }
 }
+
+@media (max-width: 1469px) {
+    .search{
+        position: relative;
+        left:132px;
+        display: flex;
+        .search-input{
+            width: 296px;
+            height: 24px;
+            background-color: #EFEFEF;
+            border: none;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            color:#929292;
+        }
+    
+
+    }
+}
