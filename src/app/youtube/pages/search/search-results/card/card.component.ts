@@ -60,8 +60,7 @@ export class CardComponent implements OnInit {
           ...item,
           ...this.cardsYoutube[1][index],
         }))),
-        console.log(this.cards),
-        this.changeCardsColor(),
+              this.changeCardsColor(),
         this.shared.setCards(this.cards)
       ),
     });
