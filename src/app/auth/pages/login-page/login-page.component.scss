@@ -111,3 +111,33 @@ border:none;
 
 
 }
+
+
+
+@media (max-width: 1470px) {
+
+    .login-page{
+        background-color: white;
+        margin: auto;
+        width: 900px;
+        height: 820px;
+    
+    
+    .login-window{
+        position: relative;
+        width: 350px;
+        height: 250px;
+        left: 295px;
+        top: 55px;
+        background-color: #F2F2F2;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+    
+    
+    }
+    
+    
+    
+    }
+  }
